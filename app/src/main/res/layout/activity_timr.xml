@@ -11,7 +11,7 @@
     <de.morrox.fontinator.FontTextView
         android:id="@+id/textViewGreeting"
         android:visibility="invisible"
-        android:text="Hello"
+        android:text="Bye"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -47,7 +47,7 @@
     <de.morrox.fontinator.FontTextView
         android:id="@+id/textViewTags"
         android:visibility="invisible"
-        android:text="#i #am #not #doing #shit #today"
+        android:text="#great #job #party #hard #afternoon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

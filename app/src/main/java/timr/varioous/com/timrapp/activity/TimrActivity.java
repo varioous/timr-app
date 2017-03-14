@@ -225,7 +225,7 @@ public class TimrActivity extends Activity {
                         timeDataSource.close();
                         this.textViewHours.setText(String.valueOf(this.getHoursThisWeek(u)));
                     } else {
-                        //user is going
+                       //user is going
                         this.textViewTags.setText("#great #job #party #hard #afternoon");
                         this.textViewGreeting.setText("Bye");
 
@@ -249,7 +249,15 @@ public class TimrActivity extends Activity {
                         }
 
                         timeDataSource.open();
-                        int hoursDuration = (int) (((gehen.getDate() - kommen.getDate()) / (1000 * 60 * 60)) % 24);
+
+                        long duration = gehen.getDate() - kommen.getDate();
+                        int durationMinutes = (int) duration / 1000 / 60;
+                        //consider automatic break time
+                        if (durationMinutes > 361) {
+                            durationMinutes -= 45;
+                        }
+
+                        int hoursDuration = durationMinutes / 60;
 
                         timeDataSource.insertTimeFinished(u.getTimeUserName(), this.milisecToTimrDateString(kommen.getDate()), this.milisecToTimrDateString(gehen.getDate()), kommen.getDate());
 
